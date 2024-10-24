@@ -1,4 +1,4 @@
-grid = {
+grid = {   #C'est la liste qui va permettre de print la grille
     "ligne1": [" ", " ", " "],
     "ligne2": [" ", " ", " "],
     "ligne3": [" ", " ", " "]
@@ -9,7 +9,7 @@ def printer_game():   #c'est ce qui permet de print toute la grille de jeu avec 
     print(grid["ligne2"])
     print(grid["ligne3"])
 
-def verifier_victoire(grid): 
+def verifier_victoire(grid): #C'est le code qui vérifie la victoire de quelqu'un 
     for i in range(1, 4):
         ligne = grid[f"ligne{i}"]
         if ligne[0] == ligne[1] == ligne[2] != " ":
@@ -53,7 +53,7 @@ def coup_robot(grid):
             if est_case_vide(grid, ligne, colonne):
                 return ligne, colonne
 
-while True:
+while True: #Cette boucle sert a choisir si on joue contre un autre joueur ou le robot
     mode = input("Choisissez votre mode de jeu:\n1 - Joueur contre Joueur\n2 - Joueur contre Robot\nVotre choix (1 ou 2): ")
     if mode in ["1", "2"]:
         break
